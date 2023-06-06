@@ -9,16 +9,20 @@ make install-istio
 ```
 make install-bookinfo
 ```
-3. 部署网关和路由
+3.  添加一个命名空间标签，以后部署应用程序时自动注入Envoy sidecar代理
+```
+make label-namespace:
+```
+4. 部署网关和路由
 ```
 make install-bookinfo-gateway
 ```
-4. 修改 istio-ingressgateway 为 NodePort
+1. 修改 istio-ingressgateway 为 NodePort
 执行以下命令 修改 istio-ingressgateway 为 NodePort,并且将 port: 80 映射为 port: 30080 
 ``` shell
 kubectl edit svc istio-ingressgateway -n istio-system
 ```
-5. 访问 bookinfo 服务
+1. 访问 bookinfo 服务
 通过 k8s 节点的 ip 和 port 来访问 bookinfo 服务了,需要将ip,prot 替换成自己的
 ```
   http://192.168.31.180:30080/productpage
