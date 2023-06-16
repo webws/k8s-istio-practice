@@ -1,0 +1,30 @@
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: nginx-ingress
+#   namespace: test-ingress
+#   annotations:
+#     # nginx.ingress.kubernetes.io/rewrite-target: /
+#     nginx.ingress.kubernetes.io/use-regex: "true"
+#     nginx.ingress.kubernetes.io/rewrite-target: /$2
+# spec:
+#   ingressClassName: nginx
+#   rules:
+#   - host: nginxtest.com
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: nginx-service 
+#             port:
+#               number: 80
+#       - path: /something
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: tracing
+#             port:
+#               number: 80
+             
