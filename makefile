@@ -1,6 +1,7 @@
 #设置变量 GATEWAY_UR=L 192.168.31.180:32468
 # GATEWAY_URL=192.168.31.180:30080
-GATEWAY_URL=172.16.0.105:30477
+# GATEWAY_URL=172.16.0.105:30477
+GATEWAY_URL=172.16.0.105:32414
 # 安装 istio
 install-istio:
 	curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.17.2 sh - && \
